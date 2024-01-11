@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Gleici é</title>
+</head>
+<body>
+    <h1>Faça uma afirmação sobre a Gleiciane</h1>
+    <form action="/" method="post">
+        <label for="adj">Gleiciane é </label>
+        <input type="text" id="adj" name="adj" required>
+        <button type="submit">Verificar</button>
+    </form>
+
+    {% if adj != None %}
+        {% if is_good(translate_to_en('Ela é ' + adj)) %}
+            <h2>Verdade! Ela é realmente {{ adj }}!</h2>
+        {% else %}
+            <h2>Não sei de onde tirou isso.</h2>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
